@@ -1,0 +1,175 @@
+/**********************************************************
+            TABLE OF CONTENTS
+----------------------------------------------------------
+    0. Project details and color and typography info
+    1. CSS Reset
+    2. Global styles
+        -root
+    3. Header and nav
+        -global
+        -sub pages
+    4. Main body content
+        -global
+        -sub pages
+    5. Footer content
+        -global
+        -sub pages
+    6. Forms
+        -sub pages
+    7. Media queries
+        -global
+        -sub pages
+************************************************************/
+/***********************************************************
+    0. Project details and color and typography info
+--------------------------------------------
+    Project: Priyadharsini Rakkan website
+    Ver: 1.0
+    Last Updated: 8/12/2023
+   *************************************************************/
+/***********************************************************
+    1. CSS Reset
+--------------------------------------------
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+************************************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/***********************************************************
+    2. Global styles
+************************************************************/
+:root {
+    /* typography */
+        --primary-font: 'Roboto', sans-serif;
+        --fw-thin: 100;
+        --fw-light: 300;
+        --fw-regular: 400;
+        --fw-medium: 500;
+        --fw-bold: 700;
+        --fw-black: 900;
+
+    /* colors */ 
+    --bg-color: #fff;
+    --nav-color:#BC195C;
+
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html { font-size: 10px; }
+a{
+    text-decoration: none;
+    color: inherit;
+}
+img{
+    height: auto;
+    margin: auto;
+    max-width: 100%;
+}
+/***********************************************************
+        3. Header and nav
+************************************************************/
+.mainNav{
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    height:70px;
+    position: fixed;
+    width:100%;
+}
+.logo{
+    height:65px;
+    width:65px;
+}
+ .menu{
+    position:fixed;
+    right:0px;
+    top:70px;
+    background-color: #BC195C;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    padding:auto 1em;
+    row-gap: 2rem;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-in-out;
+}
+.menuItem{
+    padding:0 1rem;
+    margin:0 1rem;
+    display:flex;
+    justify-content: center; 
+}
+
+.menuLink{
+    color:var(--bg-color);
+    padding:auto 1em;
+    
+}
+ 
+.bar{
+    height:2px;
+    width:27px;
+    background: var(--bg-color);
+    margin: 2.5px 0;
+    align-self: center;
+    transition: all 0.3s ease-in-out;
+}  
+.hamburger{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: center;
+    margin: 1.2em;
+}
+.menuOpen{
+   transform: translate(0);
+}
+.hamburgerOpen .bar:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburgerOpen .bar:nth-child(2){
+    opacity:0;
+}
+.hamburgerOpen .bar:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
